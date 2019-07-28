@@ -25,6 +25,6 @@ $ipa2 =(Test-Connection -ComputerName $env:computername -count 1).IPV4Address
 $ipa3 =(Get-NetIPAddress -AddressState Preferred -AddressFamily IPv4 | Select-Object IPAddress | Out-String)
 $url = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa&field2=$ipa2&field3=$ipa3";
 (New-Object System.Net.WebClient).DownloadString($url)
-#Invoke-WebRequest $url -Method Get
+Invoke-WebRequest $url -Method Get
 exit;
 
