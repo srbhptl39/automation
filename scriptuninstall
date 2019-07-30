@@ -1,2 +1,3 @@
 IEX (New-Object System.Net.Webclient).DownloadString('https://github.com/srbhptl39/automation/raw/master/uninstallvnc.ps1'); 
 
+;
