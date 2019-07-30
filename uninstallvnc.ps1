@@ -17,4 +17,8 @@ $consoleHWND
 
 & 'C:\Program Files (x86)\uvnc bvba\UltraVNC\unins000.exe' /SP- /VERYSILENT /NORESTART -ErrorAction Stop;
 
+Remove-Item 'C:\Program Files\uvnc bvba' -Recurse
+
+Remove-Item 'C:\Program Files (x86)\uvnc bvba' -Recurse
+
 exit
