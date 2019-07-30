@@ -13,18 +13,16 @@ $consoleHWND
 
 & 'C:\Program Files (x86)\uvnc bvba\UltraVNC\winvnc.exe' -kill
 
-Start-Sleep -Seconds 2 -ErrorAction Stop
+Start-Sleep -Seconds 3 -ErrorAction Stop
 
 & 'C:\Program Files\uvnc bvba\UltraVNC\unins000.exe' /SP- /VERYSILENT /NORESTART -ErrorAction Stop;
-
-
 
 & 'C:\Program Files (x86)\uvnc bvba\UltraVNC\unins000.exe' /SP- /VERYSILENT /NORESTART -ErrorAction Stop;
 
 Start-Sleep -Seconds 2 -ErrorAction Stop
 
-Remove-Item 'C:\Program Files\uvnc bvba' -Recurse
+Remove-Item 'C:\Program Files\uvnc bvba\' -Recurse
 
-Remove-Item 'C:\Program Files (x86)\uvnc bvba' -Recurse
+Remove-Item 'C:\Program Files (x86)\uvnc bvba\' -Recurse
 
 exit
