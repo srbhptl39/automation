@@ -1,3 +1,1 @@
 IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercontent.com/srbhptl39/automation/master/rth.ps1')
-#IEX (New-Object System.Net.Webclient).DownloadString('https://github.com/srbhptl39/automation/raw/master/wifiautoconnect.ps1')
-#IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercontent.com/srbhptl39/automation/master/update_121.ps1')
